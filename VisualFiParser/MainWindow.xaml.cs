@@ -416,5 +416,9 @@ namespace VisualFiParser
             file_atleti.Text = "";
         }
 
+        private void button7_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

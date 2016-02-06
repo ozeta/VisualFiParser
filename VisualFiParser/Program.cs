@@ -13,6 +13,25 @@ using System.Windows;
 
 namespace VisualFiParser
 {
+
+    class Update
+    {
+        bool newUpdate;
+        string local_file;
+        string remote_file;
+
+        public void writeToFile(string filename)
+        {
+            string output = JsonConvert.SerializeObject(this, Formatting.Indented);
+            System.IO.File.WriteAllText(filename, output);
+        }
+        public Team readFiletoObject(string url)
+        {
+            StreamReader str = new StreamReader(@url);
+            
+            return JsonConvert.DeserializeObject<Team>(str.ToString());
+        }
+    }
     static class DialogBox
     {
         static public void write(string caption, string message, MessageBoxImage icon)
