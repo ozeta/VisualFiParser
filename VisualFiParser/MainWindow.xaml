@@ -26,7 +26,7 @@
         <Button x:Name="button4" Content="Compila Modulo D2" Margin="0,0,37,26" VerticalAlignment="Bottom" Click="button4_Click" HorizontalAlignment="Right" Width="138" />
         <Button x:Name="button5" Content="Compila tutti i Moduli" Margin="0,0,37,1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="138" />
         <Button x:Name="button6" Content="Azzera campi" HorizontalAlignment="Left" Margin="160,0,0,51" VerticalAlignment="Bottom" Width="108" Click="button6_Click" />
-        <Button x:Name="button2" Content="Info (?)" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Bottom" Width="75" Height="21"/>
+        <Button x:Name="button2" Content="Info (?)" HorizontalAlignment="Left" Margin="10,0,0,1" VerticalAlignment="Bottom" Width="75" Height="21" Click="button2_Click"/>
 
         <Label FontSize="18" x:Name="label_Copy" Content="Dati Gara" HorizontalAlignment="Left" Margin="26,0,0,206" VerticalAlignment="Bottom" Width="158" Height="36"/>
         <Label x:Name="label_Copy8" Content="Nome Gara" HorizontalAlignment="Left" Margin="66,0,0,169" VerticalAlignment="Bottom" Width="104" Height="26"/>
@@ -40,7 +40,7 @@
         <StackPanel x:Name="panel3" Margin="0,0,32,107" Height="70" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="179"/>
         <TextBox x:Name="file_atleti" HorizontalAlignment="Left" Height="25" Margin="66,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="408"/>
         <Label x:Name="outputpath_label" Content="" Margin="66,248,56,247" Height="30"/>
-        <Button x:Name="button7" Content="Update?" HorizontalAlignment="Left" Margin="389,522,0,0" VerticalAlignment="Top" Width="75" Click="button7_Click"/>
+        <Button x:Name="button7" Content="Update?" HorizontalAlignment="Left" Margin="260,510,0,0" VerticalAlignment="Top" Width="75" Click="button7_Click" Height="28"/>
 
 
 

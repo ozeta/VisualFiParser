@@ -10,26 +10,87 @@ using System.Net.Sockets;
 using System.Globalization;
 using Newtonsoft.Json;
 using System.Windows;
+using System.Diagnostics;
+using System.Net;
 
 namespace VisualFiParser
 {
-
     class Update
     {
-        bool newUpdate;
+        float release;
         string local_file;
         string remote_file;
 
-        public void writeToFile(string filename)
+        public string Local_file
+        {
+            get { return local_file; }
+
+            set { local_file = value; }
+        }
+
+        public float Release
+        {
+            get { return release; }
+
+            set { release = value; }
+        }
+
+        public string Remote_file
+        {
+            get { return remote_file; }
+
+            set { remote_file = value; }
+        }
+
+        public Update()
+        {
+        }
+        public Update(string local_file)
+        {
+            this.Local_file = local_file;
+        }
+
+        public Update(float Release, string local_file, string remote_file) : this(local_file)
+        {
+            this.Release = Release;
+            this.Remote_file = remote_file;
+        }
+        static public Update readFiletoObject(string path)
+        {
+            string buffer = System.IO.File.ReadAllText(path);
+            return JsonConvert.DeserializeObject<Update>(buffer);
+        }
+        public void writeToFile(string local_file)
         {
             string output = JsonConvert.SerializeObject(this, Formatting.Indented);
-            System.IO.File.WriteAllText(filename, output);
+            System.IO.File.WriteAllText(local_file, output);
         }
-        public Team readFiletoObject(string url)
+
+        public Update isRemoteUpdateAvaible(string url)
         {
-            StreamReader str = new StreamReader(@url);
-            
-            return JsonConvert.DeserializeObject<Team>(str.ToString());
+            Update newUpdate = readRemoteFiletoObject(url);
+            if (newUpdate != null && this.release < newUpdate.release )
+            {
+                return newUpdate;
+            }
+            return null;
+        }
+
+        static public Update readRemoteFiletoObject(string url)
+        {
+            Update newupdate = null;
+            try
+            {
+                WebClient wc = new WebClient();
+                string data = wc.DownloadString(url);
+                newupdate = JsonConvert.DeserializeObject<Update>(data.ToString());
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine(ex.Message);
+                Trace.WriteLine(ex.StackTrace);
+            }
+            return newupdate;
         }
     }
     static class DialogBox

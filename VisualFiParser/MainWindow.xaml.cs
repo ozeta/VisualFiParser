@@ -26,6 +26,8 @@ namespace VisualFiParser
     public partial class MainWindow : Window
     {
 
+        float release = 0.4f;
+
         Team team;
         TextBox[] tb0 = new TextBox[4];
         TextBox[] tb1 = new TextBox[3];
@@ -43,10 +45,13 @@ namespace VisualFiParser
         String settings = base_path + @"settings.txt";
         String file_moduloD = base_path + @"templateD.docx";
         String file_moduloD2 = base_path + @"templateD2.docx";
+        String update_path = base_path + "update.txt";
+        string updateUrl = @"https://raw.githubusercontent.com/ozeta/VisualFiParser/master/update.txt";
+
         String excel_full_path = null;
         String sheetName = "FIPARSER";
         String output_path = null;
-
+        Update currentVersion;
         const int COLUMNS = 15;
         private void checkOutputDirectory(string path)
         {
@@ -229,6 +234,7 @@ namespace VisualFiParser
             */
             string jsonPath = settings;
             bool jsonExists = System.IO.File.Exists(jsonPath);
+            bool updateFileExists = System.IO.File.Exists(update_path);
             try
             {
                 createTexBoxes(panel0, tb0);
@@ -242,7 +248,15 @@ namespace VisualFiParser
                 team_hom[0] = new string[5] { "GAME_NAME", "GAME_HOME", "GAME_TEAM", "GAME_DATA", "TEAM_HOME" };
                 team_hom[1] = new string[5];
 
+                if (updateFileExists)
+                {
+                    currentVersion = Update.readFiletoObject(update_path);
+                    Update test;
+                    if ( (test = currentVersion.isRemoteUpdateAvaible() ) != null)
+                    {
 
+                    }
+                }
                 if (jsonExists)
                 {
                     team = Team.readFiletoObject(settings);
@@ -263,7 +277,6 @@ namespace VisualFiParser
                         Output_path = team.Excel_path;
                         team.Athlete_list = (new openXML(this.excel_full_path, sheetName)).parseSpreadSheet(COLUMNS);
                         outputpath_label.Content = "I moduli verranno salvati nella cartella " + Output_path;
-
                     }
 
                 }
@@ -276,7 +289,7 @@ namespace VisualFiParser
             }
             catch (System.IO.FileNotFoundException ex)
             {
-                DialogBox.write(caption, ex.Message + "\nDevi selezionare un File Atleti valido", MessageBoxImage.Information);
+                DialogBox.write(caption, ex.Message + "\nDevi selezionare un File valido", MessageBoxImage.Information);
             }
             catch (System.IO.FileLoadException ex)
             {
@@ -298,11 +311,6 @@ namespace VisualFiParser
             {
                 DialogBox.write(caption, ex.Message, MessageBoxImage.Information);
             }
-            finally
-            {
-
-            }
-
         }
 
         //Salva modifiche
@@ -416,9 +424,20 @@ namespace VisualFiParser
             file_atleti.Text = "";
         }
 
+        //controlla aggiornamenti
         private void button7_Click(object sender, RoutedEventArgs e)
         {
+            //Update upd = Update.readRemoteFiletoObject(@url);
+            Update two = new Update(release, base_path + "update.txt", updateUrl);
+            two.writeToFile(two.Local_file);
+        }
 
+        //info
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            Window1 win1 = new Window1(release);
+            win1.Show();
+            //this.Close();
         }
     }
 }

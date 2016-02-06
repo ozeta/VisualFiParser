@@ -5,12 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VisualFiParser"
         mc:Ignorable="d"
-        Title="Visual FiParser - Info" Height="300" Width="400"
+        Title="Visual FiParser - Info" Height="526" Width="678"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanMinimize"
         >
 
     <Grid>
-
+        <TextBlock x:Name="textBlock" Margin="20,35,22,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="86"><Run Text="Visual FiParser"/><Run Text=" consente di compilare "/><Run Text="rapidamente "/><Run Text="i moduli delle gare di Apnea "/><Run Text="sveltendo "/><Run Text="una pratica "/><Run Text="molto ripetitiva"/><Run Text="."/><LineBreak/><Run/><LineBreak/><Run Text="Visual FiParser è una applicazione Open Source sviluppata in C# e .Net"/><Run Text=", rilasciata con licenza MIT"/><Run Text=" ed "/><Hyperlink  x:Name="git_link" Click="git_link_Click" NavigateUri="https://github.com/ozeta/VisualFiParser"><Run Text="ospitata su GitHub"/></Hyperlink></TextBlock>
+        <Image x:Name="image" HorizontalAlignment="Left" Margin="225,121,0,0" Width="100" Height="100" VerticalAlignment="Top"/>
+        <Image x:Name="GOPR0461_1_jpg" Margin="20,151,0,0" Source="GOPR0461_1.jpg" Stretch="Fill" HorizontalAlignment="Left" Width="115" Height="115" VerticalAlignment="Top" />
+        <TextBlock x:Name="textBlock_Copy" Margin="150,151,22,0" TextWrapping="Wrap" Height="85" VerticalAlignment="Top"><Run Text="Mi chiamo Marco Carrozzo, in questo periodo sto terminando gli studi in "/><Run Text="I"/><Run Text="nformatica, pratico apnea dal 2007 e sono diventato "/><Run Text="A"/><Run Text="llenatore Indoor/Outdoor nel 2013. Ho una lunga esperienza agonistica nel nuoto "/><Run Text="e sono in categoria Elité dal 2013"/><Run Text=" ad oggi"/><Run Text="."/></TextBlock>
+        <Label x:Name="label" Content="Chi sono" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="app_name" Content="Fiparser" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBlock x:Name="txtbFooterRight" VerticalAlignment="Bottom" Height="108" Margin="452,0,10,22">
+            <Hyperlink x:Name="pp_link" TextDecorations="None" NavigateUri="https://www.paypal.me/MarcoCarrozzo" Click="paypal_link"><Run Text=" "/><InlineUIContainer>
+        		<Image Width="179" Stretch="Fill" Source="paypal.jpg" x:Name="paypal_jpg" Height="92"/>
+        	</InlineUIContainer></Hyperlink></TextBlock>
+        <TextBlock x:Name="textBlock_Copy1" Margin="20,0,42,158" TextWrapping="Wrap" Height="59" VerticalAlignment="Bottom"><Run Text="Ho sviluppato FiParser come esigenza personale, per sbrigare più rapidamente "/><Run Text="( in un click ) "/><Run Text="le pratiche burocratiche legate alle gare."/><Run Text=" Ho rilasciato pubblicamente questa applicazione come Esercizio di stile"/><Run Text=" e per aiutare "/><Run Text="qualche collega "/><Run Text="di.."/><Run Text="."/><Run Text="burocrazia :-)"/><LineBreak/><Run/><LineBreak/></TextBlock>
+        <TextBlock x:Name="textBlock_Copy2" Margin="20,0,0,98" TextWrapping="Wrap" Height="37" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="420" Text="Se hai apprezzato il mio lavoro, puoi fare una donazione per supportare lo sviluppo dell'applicazione."/>
+        <TextBlock x:Name="textBlock_Copy3" Margin="20,0,0,3" TextWrapping="Wrap" Height="80" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="303"><Hyperlink x:Name="fb_link" NavigateUri="https://www.facebook.com/ozeta" Click="Facebook_Click" ><Run Text="Marco Carrozzo su Facebook"  /></Hyperlink><Run Text=""/><LineBreak/><Run/><LineBreak/><Hyperlink NavigateUri="mailto:mar.carrozzo@gmail.com" x:Name="mail_link" Click="Mail_Click" ><Run Text="mar.carrozzo@gmail.com"/></Hyperlink><LineBreak/><Run Text=""/></TextBlock>
     </Grid>
 </Window>
