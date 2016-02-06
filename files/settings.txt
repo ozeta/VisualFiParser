@@ -1,0 +1,126 @@
+{
+  "Athlete_team": [
+    [
+      "NOME_SOC",
+      "CITTA_SOC",
+      "INDIRIZZO_SOC",
+      "MAIL_SOC",
+      "PROV_SOC",
+      "CAP_SOC",
+      "TEL_SOC"
+    ],
+    [
+      "Blue Dream Napoli ASD",
+      "Napoli",
+      "Via dei Griffi",
+      "info@bluedreamnapoli.com",
+      "NA",
+      "80100",
+      "3397460246"
+    ]
+  ],
+  "Athlete_list": [
+    [
+      "FIRSTNAME",
+      "LASTNAME",
+      "EMAIL",
+      "DATA_NASCITA",
+      "INDIRIZZO",
+      "COMUNE_RES",
+      "CAP",
+      "CITTA_NASCITA",
+      "COD_FISC",
+      "TEL_CELL",
+      "tessera_fed",
+      "tessera_atl",
+      "CAT",
+      "SPEC",
+      "TEMPO"
+    ],
+    [
+      "Marco",
+      "Carrozzo",
+      "ozeta86@gmail.com",
+      "28\\3\\1986",
+      "Via Raffaele Bosco 947",
+      "Vico Equense",
+      "80069",
+      "Napoli",
+      "CRRMRC86C28F839V",
+      "3397460246",
+      "0",
+      "0",
+      "EL M",
+      "dyn",
+      "1'50"
+    ],
+    [
+      "Sergio",
+      "Tovecci",
+      "sergiotovecci@alice.it",
+      "18\\6\\1984",
+      "via campi flegrei 46",
+      "Pozzuoli",
+      "80078",
+      "Napoli",
+      "TVCSRG84H18F839Y",
+      "3934362535",
+      "0",
+      "0",
+      "3 m",
+      "dyn",
+      "1'30"
+    ],
+    [
+      "Enzo",
+      "Coppola",
+      "enzocopp@hotmail.it",
+      "8\\5\\1986",
+      "Vicoletto Pallonetto S. Lucia, 5",
+      "Napoli",
+      "80132",
+      "Napoli",
+      "CPPNZE86E08F839I",
+      "3208769441",
+      "0",
+      "0",
+      "3 m",
+      "dyn",
+      "1'10"
+    ],
+    [
+      "Andrea",
+      "Bagato",
+      "andreabagato@libero.it",
+      "13\\11\\1996",
+      "via Giovanni Mazzella 65",
+      "Forio",
+      "80075",
+      "Napoli",
+      "BGTNDR96S13F839W",
+      "3319809536",
+      null,
+      null,
+      "3 m",
+      "dyn",
+      "1'15"
+    ]
+  ],
+  "Home_team": [
+    [
+      "GAME_NAME",
+      "GAME_HOME",
+      "GAME_TEAM",
+      "GAME_DATA",
+      "TEAM_HOME"
+    ],
+    [
+      "X Trofeo Just Apnea",
+      "Bitonto",
+      "Just Apnea",
+      "28/02/2016",
+      "Bari"
+    ]
+  ],
+  "Excel_path": "C:\\Users\\ozeta\\Desktop\\Cartel1wl.xlsx"
+}
