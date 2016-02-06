@@ -235,6 +235,7 @@ namespace VisualFiParser
             string jsonPath = settings;
             bool jsonExists = System.IO.File.Exists(jsonPath);
             bool updateFileExists = System.IO.File.Exists(update_path);
+
             try
             {
                 createTexBoxes(panel0, tb0);
@@ -248,16 +249,28 @@ namespace VisualFiParser
                 team_hom[0] = new string[5] { "GAME_NAME", "GAME_HOME", "GAME_TEAM", "GAME_DATA", "TEAM_HOME" };
                 team_hom[1] = new string[5];
 
-                if (updateFileExists)
+                try
                 {
-                    Update test;
-                    currentVersion = Update.readFiletoObject(update_path);
-                    if ( (test = currentVersion.isRemoteUpdateAvaible(updateUrl) ) != null)
+                    if (updateFileExists)
                     {
-                        Window2 win2 = new Window2(test.Release, test.Remote_download_setup);
-                        win2.Show();
+                        Update test;
+                        currentVersion = Update.readFiletoObject(update_path);
+                        if ((test = currentVersion.isRemoteUpdateAvaible(updateUrl)) != null)
+                        {
+                            Window2 win2 = new Window2(test.Release, setupUrl);
+                            win2.Show();
+                            win2.Topmost = true;
+
+                        }
                     }
                 }
+                catch (Exception ex)
+                {
+                    Trace.WriteLine(ex.Message);
+                    Trace.WriteLine(ex.StackTrace);
+
+                }
+
                 if (jsonExists)
                 {
                     team = Team.readFiletoObject(settings);

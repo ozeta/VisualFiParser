@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VisualFiParser"
         mc:Ignorable="d"
+                WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize"
         Title="Fiparser: Nuovo aggiornamento disponibile!" Height="237" Width="379">
     <Grid>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="75,25,0,0" TextWrapping="Wrap" Text="E' disponibile un nuovo aggiornamento!" VerticalAlignment="Top" Height="25" Width="215"/>

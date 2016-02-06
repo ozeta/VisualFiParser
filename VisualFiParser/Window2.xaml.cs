@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,14 +23,16 @@ namespace VisualFiParser
         float release;
         string changelog;
         string download_path;
-        public Window2()
+
+        public Window2(float release, string download_path)
         {
+
             InitializeComponent();
-        }
-        public Window2(float release, string download_path) : this()
-        {
             this.release = release;
             this.download_path = download_path;
+            Uri newuri = new Uri(download_path);
+            update_link.NavigateUri = newuri;
+
         }
         public Window2(float release, string download_path, string changelog)
             :this(release, download_path)
@@ -38,7 +41,17 @@ namespace VisualFiParser
         }
         private void update_link_Click(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start(download_path);
+
+            try
+            {
+                System.Diagnostics.Process.Start(update_link.NavigateUri.ToString());
+
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine(ex.Message);
+                Trace.WriteLine(ex.StackTrace);
+            }
         }
     }
 }

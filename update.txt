@@ -1,5 +1,9 @@
 {
   "Local_file": "C:\\Users\\ozeta\\Dropbox\\VisualFiParser\\VisualFiParser\\bin\\Debug\\files\\update.txt",
   "Release": 0.4,
+  "Remote_download_setup":"https://github.com/ozeta/VisualFiParser/releases/download/release_0.4/setup.exe",
   "Remote_file": "https://raw.githubusercontent.com/ozeta/VisualFiParser/master/update.txt"
+
 }
+
+
