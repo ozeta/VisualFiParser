@@ -20,6 +20,8 @@ namespace VisualFiParser
         float release;
         string local_file;
         string remote_file;
+        string remote_download_setup;
+        string changelog;
 
         public string Local_file
         {
@@ -42,6 +44,13 @@ namespace VisualFiParser
             set { remote_file = value; }
         }
 
+        public string Remote_download_setup
+        {
+            get{ return remote_download_setup; }
+
+            set{remote_download_setup = value;}
+        }
+
         public Update()
         {
         }
@@ -50,10 +59,11 @@ namespace VisualFiParser
             this.Local_file = local_file;
         }
 
-        public Update(float Release, string local_file, string remote_file) : this(local_file)
+        public Update(float Release, string local_file, string remote_file, string remote_download_setup) : this(local_file)
         {
             this.Release = Release;
             this.Remote_file = remote_file;
+            this.Remote_download_setup = remote_download_setup;
         }
         static public Update readFiletoObject(string path)
         {

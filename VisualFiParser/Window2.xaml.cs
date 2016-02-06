@@ -19,9 +19,26 @@ namespace VisualFiParser
     /// </summary>
     public partial class Window2 : Window
     {
+        float release;
+        string changelog;
+        string download_path;
         public Window2()
         {
             InitializeComponent();
+        }
+        public Window2(float release, string download_path) : this()
+        {
+            this.release = release;
+            this.download_path = download_path;
+        }
+        public Window2(float release, string download_path, string changelog)
+            :this(release, download_path)
+        {
+            this.changelog = changelog;
+        }
+        private void update_link_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(download_path);
         }
     }
 }

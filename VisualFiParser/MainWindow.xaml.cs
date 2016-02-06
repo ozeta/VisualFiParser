@@ -47,7 +47,7 @@ namespace VisualFiParser
         String file_moduloD2 = base_path + @"templateD2.docx";
         String update_path = base_path + "update.txt";
         string updateUrl = @"https://raw.githubusercontent.com/ozeta/VisualFiParser/master/update.txt";
-
+        string setupUrl = @"https://github.com/ozeta/VisualFiParser/releases/download/release_0.4/setup.exe";
         String excel_full_path = null;
         String sheetName = "FIPARSER";
         String output_path = null;
@@ -250,11 +250,12 @@ namespace VisualFiParser
 
                 if (updateFileExists)
                 {
-                    currentVersion = Update.readFiletoObject(update_path);
                     Update test;
-                    if ( (test = currentVersion.isRemoteUpdateAvaible() ) != null)
+                    currentVersion = Update.readFiletoObject(update_path);
+                    if ( (test = currentVersion.isRemoteUpdateAvaible(updateUrl) ) != null)
                     {
-
+                        Window2 win2 = new Window2(test.Release, test.Remote_download_setup);
+                        win2.Show();
                     }
                 }
                 if (jsonExists)
@@ -428,8 +429,9 @@ namespace VisualFiParser
         private void button7_Click(object sender, RoutedEventArgs e)
         {
             //Update upd = Update.readRemoteFiletoObject(@url);
-            Update two = new Update(release, base_path + "update.txt", updateUrl);
-            two.writeToFile(two.Local_file);
+            //Update two = new Update(release, base_path + "update.txt", updateUrl, setupUrl);
+            //two.writeToFile(two.Local_file);
+
         }
 
         //info

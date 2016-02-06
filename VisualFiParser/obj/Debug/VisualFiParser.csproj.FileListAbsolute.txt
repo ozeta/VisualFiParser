@@ -17,3 +17,5 @@ C:\Users\ozeta\Dropbox\VisualFiParser\VisualFiParser\obj\Debug\VisualFiParser.ex
 C:\Users\ozeta\Dropbox\VisualFiParser\VisualFiParser\obj\Debug\VisualFiParser.pdb
 C:\Users\ozeta\Dropbox\VisualFiParser\VisualFiParser\obj\Debug\Window1.g.cs
 C:\Users\ozeta\Dropbox\VisualFiParser\VisualFiParser\obj\Debug\Window1.baml
+C:\Users\ozeta\Dropbox\VisualFiParser\VisualFiParser\obj\Debug\Window2.g.cs
+C:\Users\ozeta\Dropbox\VisualFiParser\VisualFiParser\obj\Debug\Window2.baml
